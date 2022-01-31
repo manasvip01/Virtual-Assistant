@@ -9,8 +9,8 @@ import webbrowser
 listener=sr.Recognizer()
 engine=pyttsx3.init()
 voices=engine.getProperty('voices')
-engine.setProperty('voice',voices[0].id)
-engine.say('I am your Alexa')
+engine.setProperty('voice',voices[1].id)
+engine.say('I am Lily')
 engine.say('What can I do for you?')
 engine.runAndWait()
 def talk(text):
@@ -25,10 +25,10 @@ def takeCommand():
             command=listener.recognize_google(voice)
             command=command.lower()
             if 'alexa' in command:
-                command=command.replace('alexa','')
+                command=command.replace('Lily','')
                 print(command)
             else:
-                talk('My name is Alexa!')
+                talk('My name is Lily!')
                 # engine.say('My name is alexa!')
     except:
         pass
